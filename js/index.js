@@ -107,6 +107,8 @@ const years = games.map((game) => {
 
 console.log(years);
 
+// Custom forEach - what happens inside the forEach method?
+
 function myForEach(callback) {
   const colors = ["#fff", "#000", "#ccc"];
   callback(colors[0]);
