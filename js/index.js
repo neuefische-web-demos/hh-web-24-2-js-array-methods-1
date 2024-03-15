@@ -95,11 +95,10 @@ games.forEach(logName);
 //   console.log(game.name);
 // });
 
+// "Standard form" with an arrow function
 games.forEach((item) => {
   console.log(item.name);
 });
-
-logName("test");
 
 const years = games.map((game) => {
   // const year = game.publishingYear;
@@ -107,3 +106,47 @@ const years = games.map((game) => {
 });
 
 console.log(years);
+
+function myForEach(callback) {
+  const colors = ["#fff", "#000", "#ccc"];
+  callback(colors[0]);
+  callback(colors[1]);
+  callback(colors[2]);
+}
+
+myForEach((color) => {
+  console.log(color);
+});
+
+const allNewGames = games.filter((game) => {
+  if (game.publishingYear > 1990) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log(allNewGames);
+
+const gamesWIthoutId6 = games.filter((game) => {
+  const isGameId6 = game.id === 6;
+  if (isGameId6) {
+    return false;
+  } else {
+    return true;
+  }
+});
+
+console.log(gamesWIthoutId6);
+
+const result = games
+  .filter((game) => {
+    if (game.publishingYear > 1990) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  .map((game) => {
+    return game.name;
+  });
